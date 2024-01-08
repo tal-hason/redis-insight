@@ -1,4 +1,3 @@
-#! helm-template
 kind: Service
 apiVersion: v1
 metadata:
