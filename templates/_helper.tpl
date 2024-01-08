@@ -1,3 +1,7 @@
+{{- define "message" -}}
+## Redis Insight Helm Chart
+{{-end }}
+
 {{- define "app.labels" }}
 app: redis-browser
 app.kubernetes.io/component: {{ .Chart.Name }}

@@ -1,3 +1,5 @@
+{{- include "message" .  }}
+---
 {{- if .Values.global.storage.pvc.enabled }}
 kind: PersistentVolumeClaim
 apiVersion: v1

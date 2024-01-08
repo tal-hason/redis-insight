@@ -1,3 +1,5 @@
+{{- include "message" .  }}
+---
 kind: Service
 apiVersion: v1
 metadata:
