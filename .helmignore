@@ -2,4 +2,4 @@ README.md
 .gitignore
 .helmignore
 .git
-.artifacts
+.artifacts/
