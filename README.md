@@ -34,7 +34,7 @@ helm uninstall redis-insight
 
 ### Values
 
-The except the following Values:
+The Chart Have the following Values:
 
 | Key                   | Value                                     | Description                                                                                                      |
 |-----------------------|-------------------------------------------|------------------------------------------------------------------------------------------------------------------|
