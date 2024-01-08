@@ -12,7 +12,7 @@
 
 2. check the latest Package version under this Git Repo Packages.
 
-![Package](https://github.com/tal-hason/redis-insight/blob/main/.artifacts/Screenshot%20from%202024-01-08%2022-19-13.png)
+![Package](https://github.com/tal-hason/redis-insight/blob/73ca415e3d66ece3fadfeb6033bc26e675061c1c/.artifacts/package.png)
 
 install using the HElM CLI
 
@@ -91,7 +91,7 @@ The Chart Have the following Values:
 
 - After the pod has finish loading access the Route.
 
-![Pod Logs](https://github.com/tal-hason/redis-insight/blob/main/.artifacts/Screenshot%20from%202024-01-08%2023-12-28.png)
-the following screen should appeare:
+![Pod Logs](https://github.com/tal-hason/redis-insight/blob/73ca415e3d66ece3fadfeb6033bc26e675061c1c/.artifacts/pod-logs.png)
 
+the following screen should appeare:
 
