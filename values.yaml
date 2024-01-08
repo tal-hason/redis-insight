@@ -10,7 +10,7 @@ global:
   ## Openshift Route Properties  
   route:
     tls:
-      enabled: false
+      enabled: true
     appsDomain: apps-crc.testing
   ## Redis Insghit Storage Configuration  
   storage:
@@ -27,7 +27,7 @@ global:
   configs:
     ## Description: Configures the log level of the application. 
     ## Possible values are - "DEBUG", "INFO", "WARNING", "ERROR" and "CRITICAL".
-    logLevel: "WARNING"
+    logLevel: "INFO"
     ## Description: Sets the storage directory where RedisInsight stores application data 
     ## (such as local database, log files and snapshot files).
     homeDir: "/db"

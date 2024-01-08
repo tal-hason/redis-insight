@@ -34,6 +34,42 @@ helm uninstall redis-insight
 
 ### Values
 
+```YAML
+global:
+  ## Redis Ingsight Officail image
+  container:
+    image: 'docker.io/redislabs/redisinsight'
+    tag: 'latest'
+  ## Openshift Service propertis 
+  service:
+    name: redis-insight
+    port: 8001
+  ## Openshift Route Properties  
+  route:
+    tls:
+      enabled: true
+    appsDomain: apps-crc.testing
+  ## Redis Insghit Storage Configuration  
+  storage:
+    pvc:
+      enabled: true
+  ## Deployment Resources    
+  resources:
+    requests:
+      cpu: 500m
+      memory: 512Mi
+    limits: {}
+      # cpu: 500m
+      # memory: 512Mi
+  configs:
+    ## Description: Configures the log level of the application. 
+    ## Possible values are - "DEBUG", "INFO", "WARNING", "ERROR" and "CRITICAL".
+    logLevel: "INFO"
+    ## Description: Sets the storage directory where RedisInsight stores application data 
+    ## (such as local database, log files and snapshot files).
+    homeDir: "/db"
+```
+
 The Chart Have the following Values:
 
 | Key                   | Value                                     | Description                                                                                                      |
@@ -50,3 +86,12 @@ The Chart Have the following Values:
 | global.resources.limits | {}                                       | Limits for deployment resources (CPU, memory, etc.)                                                             |
 | global.configs.logLevel | "WARNING"                                | Log level configuration for the application. Possible values: "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"   |
 | global.configs.homeDir | "/db"                                      | Storage directory for RedisInsight, where application data is stored (local database, log files, snapshot files)|
+
+### Post installation
+
+- After the pod has finish loading access the Route.
+
+![Pod Logs](https://github.com/tal-hason/redis-insight/blob/main/.artifacts/Screenshot%20from%202024-01-08%2023-12-28.png)
+the following screen should appeare:
+
+
