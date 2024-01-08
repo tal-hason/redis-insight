@@ -18,7 +18,7 @@ spec:
         {{- if .Values.global.storage.pvc.enabled }}
         - name: home-dir
           persistentVolumeClaim:
-            claimName: insightdb
+            claimName: {{ .Release.Name }}
         {{- else }}
         - name: home-dir
           emptyDir: {}
