@@ -99,3 +99,8 @@ The Chart Have the following Values:
 
 - Please approve all the Check boxes to proceed.
 
+![Check-Box](https://github.com/tal-hason/redis-insight/blob/362ea161709b82ba565deb549e2e4421602a7af5/.artifacts/First-login.png)
+
+- Now you can start using
+
+![Start](https://github.com/tal-hason/redis-insight/blob/362ea161709b82ba565deb549e2e4421602a7af5/.artifacts/landing-page.png)
