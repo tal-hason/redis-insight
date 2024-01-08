@@ -1,3 +1,5 @@
+#! helm-template
+{{- if .Values.global.storage.pvc.enabled }}
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
@@ -9,3 +11,4 @@ spec:
     requests:
       storage: 150Mi
   volumeMode: Filesystem
+{{- end }}
