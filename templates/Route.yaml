@@ -9,7 +9,7 @@ spec:
   host: '{{- include "host.name" . }}'
   to:
     kind: Service
-    name: '{{- include "service.name" . }}'
+    name: '{{ .Release.Name }}'
     weight: 100
   port:
     targetPort: '{{ .Values.global.service.name }}'

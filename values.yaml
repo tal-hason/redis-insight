@@ -5,7 +5,6 @@ global:
     tag: 'latest'
   ## Openshift Service propertis 
   service:
-    name: redis-insight
     port: 8001
   ## Openshift Route Properties  
   route:

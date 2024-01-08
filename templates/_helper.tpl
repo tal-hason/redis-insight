@@ -21,9 +21,6 @@ deployment: {{ .Release.Name }}
 {{ .Values.global.container.image }}:{{ .Values.global.container.tag }}
 {{- end }}
 
-{{- define "service.name" -}}
-{{ .Release.Name }}-{{ .Values.global.service.name }}
-{{- end }}
 
 {{- define "host.name" -}}
 {{ .Release.Name }}-{{ .Release.Namespace }}.{{ .Values.global.route.appsDomain }}

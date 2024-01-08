@@ -76,7 +76,6 @@ The Chart Have the following Values:
 |-----------------------|-------------------------------------------|------------------------------------------------------------------------------------------------------------------|
 | global.container.image| 'docker.io/redislabs/redisinsight'        | Redis Insight Official Docker image                                                                              |
 | global.container.tag  | 'latest'                                  | Tag of the Redis Insight Docker image                                                                            |
-| global.service.name   | 'redis-insight'                           | Name of the OpenShift service for Redis Insight                                                                  |
 | global.service.port   | 8001                                      | Port for the OpenShift service                                                                                  |
 | global.route.tls.enabled | false                                   | Whether TLS is enabled for the OpenShift route                                                                   |
 | global.route.appsDomain | apps-crc.testing                         | Domain for OpenShift route                                                                                       |

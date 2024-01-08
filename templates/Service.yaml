@@ -2,12 +2,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: '{{- include "service.name" . }}'
+  name: '{{ .Release.Name }}'
   labels:
     {{- include "app.labels" . | indent 4 }}
 spec:
   ports:
-    - name: {{ .Values.global.service.name }}
+    - name: {{ .Release.Name }}
       protocol: TCP
       port: {{ .Values.global.service.port }}
       targetPort: {{ .Values.global.service.port }}

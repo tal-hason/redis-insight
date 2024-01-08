@@ -43,7 +43,7 @@ spec:
           ports:
             - containerPort: {{ .Values.global.service.port }}
               protocol: TCP
-              name: {{ .Values.global.service.name }}
+              name: {{ .Release.Name }}
           {{- if .Values.global.resources }}
           resources:
             {{- toYaml .Values.global.resources | nindent 12 }}
