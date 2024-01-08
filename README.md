@@ -93,5 +93,9 @@ The Chart Have the following Values:
 
 ![Pod Logs](https://github.com/tal-hason/redis-insight/blob/73ca415e3d66ece3fadfeb6033bc26e675061c1c/.artifacts/pod-logs.png)
 
-the following screen should appeare:
+- the following screen should appeare:
+
+![First Login](https://github.com/tal-hason/redis-insight/blob/36faf993de8122a877a6af276408a0398ae9a616/.artifacts/First-login.png)
+
+- Please approve all the Check boxes to proceed.
 
