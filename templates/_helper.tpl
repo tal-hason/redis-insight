@@ -1,6 +1,6 @@
 {{- define "message" -}}
 ## Redis Insight Helm Chart
-{{-end }}
+{{- end }}
 
 {{- define "app.labels" }}
 app: redis-browser
