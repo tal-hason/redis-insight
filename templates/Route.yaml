@@ -1,5 +1,4 @@
 {{- include "message" .  }}
----
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
