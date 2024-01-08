@@ -16,6 +16,6 @@ spec:
 {{- if .Values.global.route.tls.enabled }}
   tls:
     termination: edge
-    insecureEdgeTerminationPolicy: Allow
+    insecureEdgeTerminationPolicy: Redirect
 {{- end }}
 
