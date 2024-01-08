@@ -12,7 +12,7 @@ spec:
     name: '{{ .Release.Name }}'
     weight: 100
   port:
-    targetPort: '{{ .Values.global.service.name }}'
+    targetPort: {{ .Release.Name }}
 {{- if .Values.global.route.tls.enabled }}
   tls:
     termination: edge
