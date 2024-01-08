@@ -1,0 +1,20 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: redis-browser
+  labels:
+    {{- include "app.labels" . | indent 4 }}
+spec:
+  host: '{{- include "host.name" . }}'
+  to:
+    kind: Service
+    name: '{{- include "service.name" . }}'
+    weight: 100
+  port:
+    targetPort: '{{ .Values.global.service.name }}'
+{{- if .Values.global.route.tls.enabled }}
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Allow
+{{- end }}
+

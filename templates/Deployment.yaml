@@ -1,0 +1,74 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    {{- include "app.labels" . | indent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+        {{- include "selector.labels" . | indent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "selector.labels" . | indent 8 }}
+    spec:
+      volumes:
+        {{- if .Values.global.storage.pvc.enabled }}
+        - name: home-dir
+          persistentVolumeClaim:
+            claimName: insightdb
+        {{- else }}
+        - name: home-dir
+          emptyDir: {}
+        {{- end }}
+      containers:
+        - name: {{ .Release.Name }}
+          image: '{{- include "image.name" . }}'
+          env:
+            - name: RIPORT
+              value: '{{ .Values.global.service.port }}'
+            - name: RILOGLEVEL
+              value: '{{ .Values.global.configs.logLevel }}'
+            - name: RIHOMEDIR
+              value: '{{ .Values.global.configs.homeDir }}'
+            {{- if .Values.global.route.tls.enabled }}  
+            - name: RITRUSTEDORIGINS
+              value: 'https://{{- include "host.name" . }}'
+            {{- end }}  
+            - name: RIPROXYENABLE
+              value: '{{ .Values.global.route.tlsEnabled }}'
+          ports:
+            - containerPort: {{ .Values.global.service.port }}
+              protocol: TCP
+              name: {{ .Values.global.service.name }}
+          {{- if .Values.global.resources }}
+          resources:
+            {{- toYaml .Values.global.resources | nindent 12 }}
+          {{- end }}
+          readinessProbe:
+            httpGet:
+              path: /
+              port: {{ .Values.global.service.name }}
+              scheme: HTTP
+            initialDelaySeconds: 5
+            timeoutSeconds: 1
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 3
+          volumeMounts:
+            - name: home-dir
+              mountPath: '{{ .Values.global.configs.homeDir }}'
+          imagePullPolicy: Always
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 1
+  progressDeadlineSeconds: 600

@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: '{{- include "service.name" . }}'
+  labels:
+    {{- include "app.labels" . | indent 4 }}
+spec:
+  ports:
+    - name: {{ .Values.global.service.name }}
+      protocol: TCP
+      port: {{ .Values.global.service.port }}
+      targetPort: {{ .Values.global.service.port }}
+  type: ClusterIP
+  selector:
+    {{- include "selector.labels" . | indent 4 }}

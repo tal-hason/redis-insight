@@ -1,0 +1,27 @@
+global:
+  container:
+    image: 'docker.io/redislabs/redisinsight'
+    tag: 'latest'
+  service:
+    name: redis-insight
+    port: 8001
+  route:
+    tls:
+      enabled: false
+    appsDomain: apps-crc.testing
+  storage:
+    pvc:
+      enabled: true
+  resources:
+    requests:
+      cpu: 500m
+      memory: 512Mi
+    limits: {}
+  configs:
+    ## Description: Configures the log level of the application. 
+    ## Possible values are - "DEBUG", "INFO", "WARNING", "ERROR" and "CRITICAL".
+    logLevel: "WARNING"
+    ## Description: Sets the storage directory where RedisInsight stores application data 
+    ## (such as local database, log files and snapshot files).
+    homeDir: "/db"
+  
