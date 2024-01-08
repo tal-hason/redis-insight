@@ -35,3 +35,18 @@ helm uninstall redis-insight
 ### Values
 
 The except the following Values:
+
+| Key                   | Value                                     | Description                                                                                                      |
+|-----------------------|-------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| global.container.image| 'docker.io/redislabs/redisinsight'        | Redis Insight Official Docker image                                                                              |
+| global.container.tag  | 'latest'                                  | Tag of the Redis Insight Docker image                                                                            |
+| global.service.name   | 'redis-insight'                           | Name of the OpenShift service for Redis Insight                                                                  |
+| global.service.port   | 8001                                      | Port for the OpenShift service                                                                                  |
+| global.route.tls.enabled | false                                   | Whether TLS is enabled for the OpenShift route                                                                   |
+| global.route.appsDomain | apps-crc.testing                         | Domain for OpenShift route                                                                                       |
+| global.storage.pvc.enabled | true                                 | Enable or disable Persistent Volume Claim (PVC) for Redis Insight storage                                       |
+| global.resources.requests.cpu | 500m                                | CPU request for deployment                                                                                      |
+| global.resources.requests.memory | 512Mi                             | Memory request for deployment                                                                                   |
+| global.resources.limits | {}                                       | Limits for deployment resources (CPU, memory, etc.)                                                             |
+| global.configs.logLevel | "WARNING"                                | Log level configuration for the application. Possible values: "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"   |
+| global.configs.homeDir | "/db"                                      | Storage directory for RedisInsight, where application data is stored (local database, log files, snapshot files)|

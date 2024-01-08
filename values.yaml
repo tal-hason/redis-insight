@@ -1,17 +1,22 @@
 global:
+  ## Redis Ingsight Officail image
   container:
     image: 'docker.io/redislabs/redisinsight'
     tag: 'latest'
+  ## Openshift Service propertis 
   service:
     name: redis-insight
     port: 8001
+  ## Openshift Route Properties  
   route:
     tls:
       enabled: false
     appsDomain: apps-crc.testing
+  ## Redis Insghit Storage Configuration  
   storage:
     pvc:
       enabled: true
+  ## Deployment Resources    
   resources:
     requests:
       cpu: 500m
