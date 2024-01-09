@@ -1,7 +1,8 @@
 global:
   ## Redis Ingsight Officail image
   container:
-    image: 'docker.io/redislabs/redisinsight'
+    registry: docker.io
+    image: 'redislabs/redisinsight'
     tag: 'latest'
   ## Openshift Service propertis 
   service:

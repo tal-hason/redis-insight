@@ -18,7 +18,7 @@ deployment: {{ .Release.Name }}
 {{- end }}
 
 {{- define "image.name" -}}
-{{ .Values.global.container.image }}:{{ .Values.global.container.tag }}
+{{ .Values.global.container.registry }}/{{ .Values.global.container.image }}:{{ .Values.global.container.tag }}
 {{- end }}
 
 
