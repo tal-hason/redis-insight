@@ -27,7 +27,7 @@ global:
   configs:
     ## Description: Configures the log level of the application. 
     ## Possible values are - "DEBUG", "INFO", "WARNING", "ERROR" and "CRITICAL".
-    logLevel: "INFO"
+    logLevel: "DEBUG"
     ## Description: Sets the storage directory where RedisInsight stores application data 
     ## (such as local database, log files and snapshot files).
     homeDir: "/data"
