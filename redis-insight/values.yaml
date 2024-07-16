@@ -30,5 +30,5 @@ global:
     logLevel: "INFO"
     ## Description: Sets the storage directory where RedisInsight stores application data 
     ## (such as local database, log files and snapshot files).
-    homeDir: "/db"
+    homeDir: "/data
   
