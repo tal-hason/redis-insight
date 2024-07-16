@@ -6,7 +6,7 @@ global:
     tag: 'latest'
   ## Openshift Service propertis 
   service:
-    port: 8001
+    port: 5540
   ## Openshift Route Properties  
   route:
     tls:
