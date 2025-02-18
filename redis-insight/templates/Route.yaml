@@ -5,6 +5,9 @@ metadata:
   name: redis-browser
   labels:
     {{- include "app.labels" . | indent 4 }}
+  annotations:
+    argocd.argoproj.io/sync-options: Replace=true
+    link.argocd.argoproj.io/external-link: 'https://{{- include "host.name" . }}'
 spec:
   host: '{{- include "host.name" . }}'
   to:
