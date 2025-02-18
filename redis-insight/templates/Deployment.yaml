@@ -51,7 +51,7 @@ spec:
           readinessProbe:
             httpGet:
               path: /
-              port: {{ .Release.Name }}
+              port: {{ .Values.global.service.port }}
               scheme: HTTP
             initialDelaySeconds: 60
             timeoutSeconds: 1
