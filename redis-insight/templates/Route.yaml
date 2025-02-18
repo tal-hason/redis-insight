@@ -2,7 +2,7 @@
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
-  name: redis-browser
+  name: '{{ .Release.Name }}'
   labels:
     {{- include "app.labels" . | indent 4 }}
   annotations:
