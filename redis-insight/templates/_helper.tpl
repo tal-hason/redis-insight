@@ -13,8 +13,8 @@ app.openshift.io/runtime-namespace: {{ .Release.Namespace }}
 {{- end }}
 
 {{- define "selector.labels" }}
-app: {{ .Release.Name }}
-deployment: {{ .Release.Name }}
+app: '{{ .Release.Name }}-redis-insight'
+deployment: '{{ .Release.Name }}-redis-insight'
 {{- end }}
 
 {{- define "image.name" -}}
@@ -23,5 +23,5 @@ deployment: {{ .Release.Name }}
 
 
 {{- define "host.name" -}}
-{{ .Release.Name }}-{{ .Release.Namespace }}.{{ .Values.global.route.appsDomain }}
+{{ .Release.Name }}-redis-insight-{{ .Release.Namespace }}.{{ .Values.global.route.appsDomain }}
 {{- end }}
