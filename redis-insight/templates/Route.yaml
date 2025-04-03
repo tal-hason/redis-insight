@@ -2,7 +2,7 @@
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
-  name: '{{ .Release.Name }}'
+  name: '{{ .Release.Name }}-redis-insight'
   labels:
     {{- include "app.labels" . | indent 4 }}
   annotations:
@@ -12,7 +12,7 @@ spec:
   host: '{{- include "host.name" . }}'
   to:
     kind: Service
-    name: '{{ .Release.Name }}'
+    name: '{{ .Release.Name }}-redis-insight'
     weight: 100
   port:
     targetPort: {{ .Values.global.service.port }}
