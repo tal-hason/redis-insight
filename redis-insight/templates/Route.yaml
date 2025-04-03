@@ -12,10 +12,10 @@ spec:
   host: '{{- include "host.name" . }}'
   to:
     kind: Service
-    name: 'redis-insight'
+    name: '{{ .Release.Name }}-redis-insight'
     weight: 100
-  # port:
-  #   targetPort: 'redis-insight'
+  port:
+    targetPort: 'redis-insight'
 {{- if .Values.global.route.tls.enabled }}
   tls:
     termination: edge
