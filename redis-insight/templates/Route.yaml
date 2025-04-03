@@ -12,7 +12,7 @@ spec:
   host: '{{- include "host.name" . }}'
   to:
     kind: Service
-    name: '{{ .Release.Name }}-redis-insight'
+    name: 'redis-insight'
     weight: 100
   port:
     targetPort: {{ .Values.global.service.port }}
