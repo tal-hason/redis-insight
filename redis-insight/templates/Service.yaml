@@ -2,12 +2,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: '{{ .Release.Name }}'
+  name: '{{ .Release.Name }}-redis-insight'
   labels:
     {{- include "app.labels" . | indent 4 }}
 spec:
   ports:
-    - name: {{ .Release.Name }}
+    - name: {{ .Release.Name }}-redis-insight
       protocol: TCP
       port: {{ .Values.global.service.port }}
       targetPort: {{ .Values.global.service.port }}
