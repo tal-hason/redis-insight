@@ -15,7 +15,7 @@ spec:
     name: 'redis-insight'
     weight: 100
   port:
-    targetPort: {{ .Values.global.service.port }}
+    targetPort: 'redis-insight'
 {{- if .Values.global.route.tls.enabled }}
   tls:
     termination: edge
