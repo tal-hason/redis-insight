@@ -16,6 +16,7 @@ global:
   storage:
     pvc:
       enabled: true
+      storageClassName: 
   ## Deployment Resources    
   resources:
     requests:
