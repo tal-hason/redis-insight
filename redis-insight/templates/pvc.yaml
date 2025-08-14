@@ -1,4 +1,4 @@
-{{- include "message" .  }}
+{{- include "message" . }}
 {{- if .Values.global.storage.pvc.enabled }}
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -11,4 +11,7 @@ spec:
     requests:
       storage: 8Gi
   volumeMode: Filesystem
+  {{- if .Values.global.storage.pvc.storageClassName }}
+  storageClassName: {{ .Values.global.storage.pvc.storageClassName }}
+  {{- end }}
 {{- end }}
